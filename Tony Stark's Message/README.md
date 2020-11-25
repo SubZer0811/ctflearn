@@ -5,7 +5,7 @@ info.txt contains some encoded data and a link. The link should be used to downl
 The states that the message is compressed and that node_data is pickled.
 
 ### Step 2: 
-hexdumping node_data.txt shows us that there is a class with the name **Node** and there are some other variables in the class namely: **left**, **right**, **freq** and **data**. A variable named **_count** was also fo 
+hexdumping node_data.txt shows us that there is a class with the name **Node** and there are some other variables in the class namely: **left**, **right**, **freq** and **data**. A variable named **_count** was also found but the use for it remains unknown.<br>
 From this it seems to be clear that the compression technique used here was Huffman Encoding. The object stored in node_data.txt ought to be the huffman encoding tree of the message.
 
 ![Hexdump of node_data.txt](hexdump.png)
@@ -17,10 +17,10 @@ After multiple attempts to decode the huffman tree, I had written decode.py to s
 
 #### Explanation:
 
-(lines 3-6): In order to view the contents of the pickled file, create a class named **Node** .
-(lines 13-26): Function **rec(node, i)** decodes the Huffman encoding tree.
-(line 31): load the object from node_data.txt
-(lines 38-46): parse through encoded data appending one bit at a time to check if it matches with any entry in the encoding table.
+(lines 3-6): In order to view the contents of the pickled file, create a class named **Node** .<br>
+(lines 13-26): Function **rec(node, i)** decodes the Huffman encoding tree.<br>
+(line 31): load the object from node_data.txt<br>
+(lines 38-46): parse through encoded data appending one bit at a time to check if it matches with any entry in the encoding table.<br>
 
 ![output](output.png)
 
